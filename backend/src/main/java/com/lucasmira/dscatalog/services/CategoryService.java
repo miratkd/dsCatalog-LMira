@@ -1,6 +1,7 @@
 package com.lucasmira.dscatalog.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lucasmira.dscatalog.dto.CategoryDTO;
 import com.lucasmira.dscatalog.entities.Category;
 import com.lucasmira.dscatalog.repositories.CategoryRepository;
+import com.lucasmira.dscatalog.services.exceptions.EntityNotFoundException;
 
 @Service
 public class CategoryService {
@@ -22,5 +24,12 @@ public class CategoryService {
 		List<Category> list = repository.findAll();
 		
 		return list.stream().map(x -> new CategoryDTO(x)).collect(Collectors.toList());
+	}
+
+	@Transactional(readOnly = true)
+	public CategoryDTO findById(Long id) {
+		Optional<Category> obj = repository.findById(id);
+		Category entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not fund"));
+		return new CategoryDTO(entity);
 	}
 }
