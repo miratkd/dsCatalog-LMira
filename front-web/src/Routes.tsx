@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Navbar from './core/components/navbar';
-import Admin from './pages/Admin';
-import Catalog from './pages/Catalog';
-import ProductsDetails from './pages/Catalog/components/productsDetails';
-import Home from './pages/Home';
+import Navbar from 'core/components/navbar';
+import Admin from 'pages/Admin';
+import Catalog from 'pages/Catalog';
+import ProductsDetails from 'pages/Catalog/components/productsDetails';
+import Home from 'pages/Home';
 
 const Routes = () => (
 
