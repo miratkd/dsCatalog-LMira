@@ -3,6 +3,7 @@
     color: #fff;
     align-items: center;
     padding-left: 40px;
+    padding-right: 40px;
     margin-left: 0;
     margin-right: 0;
 }
@@ -13,21 +14,26 @@
 
 .main-menu {
     display: flex;
-    font-size: 18px;
-    width: 380px;
-    justify-content: space-between;
+    justify-content: center;
 
-    a {
-        font-style: normal;
-        color: rgba(255, 255, 255, 0.5);
-
-        &.active{
-            font-weight: bold;
-            color: #fff;
-        }
-
-        &:hover{
-            color: #fff;
-        }
+    li {
+        margin-right: 85px;
     }
+
+    
 }
+
+.nav-link {
+font-style: normal;
+font-size: 18px;
+ color: rgba(255, 255, 255, 0.5);
+
+  &.active{
+     font-weight: bold;
+     color: #fff;
+  }
+
+  &:hover{
+     color: #fff;
+   }
+    }
