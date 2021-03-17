@@ -13,12 +13,8 @@ const Products = () => {
                     <List/>
                 </Route>
 
-                <Route path="/admin/products/create">
-                    <Form/>
-                </Route>
-
                 <Route path="/admin/products/:productsId">
-                    Deletar produto
+                    <Form/> 
                 </Route>
             </Switch>
         </div>
