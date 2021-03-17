@@ -1,10 +1,10 @@
-import { makePrivateRequest } from 'core/utils/request';
-import React from 'react';
+import { makePrivateRequest, makeRequest } from 'core/utils/request';
+import React, { useEffect } from 'react';
 import {  useForm } from 'react-hook-form';
 import BaseForm from '../../baseForm';
 import { toast } from 'react-toastify';
 import './styles.scss';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 type formState = {
     name: string;
@@ -12,14 +12,33 @@ type formState = {
     description: string;
     imgUrl: string;
 }
-
+type ParamsType = {
+    productsId: string;
+}
 
 const Form = () => {
-    const {register, handleSubmit, errors} = useForm<formState>();
+    const {register, handleSubmit, errors, setValue} = useForm<formState>();
     const history = useHistory();
+    const { productsId } = useParams<ParamsType>();
+    const isEditing = productsId !== 'create';
+    useEffect(() => {
+        if(isEditing){
+                makeRequest({ url: `/products/${productsId}` })
+            .then(response => {
+                setValue('name', response.data.name);
+                setValue('price', response.data.price);
+                setValue('description', response.data.description);
+                setValue('imgUrl', response.data.imgUrl);
+            });
+        }
+    }, [productsId, isEditing, setValue])
 
     const onSubmit = (data: formState) => {
-       makePrivateRequest({url: '/products' , method: 'POST', data})
+       makePrivateRequest({
+           url: isEditing ? `/products/${productsId}` : '/products', 
+           method: isEditing ? 'PUT' : 'POST',
+           data
+        })
        .then(() => {
            toast.info('Produto cadastrado com sucesso!');
            history.push('/admin/products');
@@ -30,7 +49,7 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <BaseForm title="CADASTRAR UM PRODUTO">
+            <BaseForm title={isEditing ? 'ATUALIZAR UM PRODUTO' : 'CADASTRAR UM PRODUTO'}>
                 <div className="row">
                     <div className="col-6">
                         <div className="margin-botton-30">
