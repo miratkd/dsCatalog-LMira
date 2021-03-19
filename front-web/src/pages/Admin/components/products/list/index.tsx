@@ -1,7 +1,6 @@
 import Pagination from 'core/components/Pagination';
 import { ProductsResponse } from 'core/types/Product';
 import { makePrivateRequest, makeRequest } from 'core/utils/request';
-
 import React, { useEffect, useState, useCallback } from 'react';
 import { useHistory} from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -14,6 +13,7 @@ const List = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
     const history = useHistory();
+    
     const getProducts = useCallback(() => {
         const params = {
             page: activePage,
