@@ -1,5 +1,5 @@
 import { makePrivateRequest, makeRequest } from 'core/utils/request';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {  useForm, Controller} from 'react-hook-form';
 import BaseForm from '../../baseForm';
 import { toast } from 'react-toastify';
@@ -7,9 +7,10 @@ import './styles.scss';
 import { useHistory, useParams } from 'react-router';
 import Select from 'react-select';
 import { Category } from 'core/types/Product';
+import PriceField from './priceField';
 
 
-type formState = {
+export type formState = {
     name: string;
     price: string;
     description: string;
@@ -93,6 +94,7 @@ const Form = () => {
                                 rules={{required: true}}
                                 control={control}
                                 as={Select} 
+                                defaultValue=""
                                 isLoading={isLoadingCategories}
                                 classNamePrefix="categories-select"
                                 options={categories}
@@ -108,13 +110,7 @@ const Form = () => {
                             )}
                         </div>
                         <div className="margin-botton-30">
-                            <input
-                                ref={register({required: "Campo obrigatório."})}
-                                type="number"
-                                className="form-control input-base"
-                                name="price"
-                                placeholder="Preço"
-                            />
+                            <PriceField control={control}/>
                             {errors.price && (
                                 <div className="invalid-feedback d-block">
                                     {errors.price.message}
