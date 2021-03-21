@@ -5,19 +5,19 @@ import { useEffect, useState } from 'react';
 import { makeRequest } from 'core/utils/request';
 import { Category } from 'core/types/Product';
 
-export type FilterForm={
-    name?: string;
-    categoryId?: number; 
-}
+
 type Props ={
-    onSearch: (filter: FilterForm) => void; 
+    name?: string;
+    handleChangeName: (name: string) => void;
+    category?: Category;
+    handleChangeCategory: (category: Category) => void;
+    clearFilter: () => void;
 }
 
-const ProductsFilter = ({onSearch}: Props) => {
+const ProductsFilter = ({name, handleChangeName, category, handleChangeCategory, clearFilter}: Props) => {
     const [categories, setCategories] = useState<Category[]>();
     const [isLoadingCategories, setIsLoadingCategories] = useState(false);
-    const [name, setName] = useState(''); 
-    const [category, setCategory] = useState<Category>();   
+    
 
     useEffect(() => {
         setIsLoadingCategories(true);
@@ -28,20 +28,7 @@ const ProductsFilter = ({onSearch}: Props) => {
             })
     }, []);
 
-    const handleChangeName = (name: string) =>{
-        setName(name);
-        onSearch({name, categoryId: category?.id});
-    }
-    const handleChangeCategory = (category: Category) =>{
-        setCategory(category);
-
-        onSearch({name, categoryId: category?.id});
-    }
-    const clearFilter = () => {
-        setCategory(undefined);
-        setName('');
-        onSearch({name: '', categoryId: undefined});
-    }
+    
 
     return (
         <div className="card-base products-filter-container">
