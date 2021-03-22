@@ -1,5 +1,4 @@
 import { isAllowedByRole } from 'core/utils/auth';
-import Reach from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles.scss';
 
