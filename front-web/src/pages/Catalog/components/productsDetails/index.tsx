@@ -30,20 +30,23 @@ const ProductsDetails = () => {
                     <ArrowIcon className="icon-goback" />
                     <h1 className="text-goback">VOLTAR</h1>
                 </Link>
-                <div className="row">
-                    <div className="col-6 pr-5">
+                <div className="products-details-info">
+                    
                         {isLoading ? <ProductDescriptionLoader/> :
                             <>
                                 <div className="product-details-card text-center ">
                                     <img src={product?.imgUrl} alt={product?.name} className="product-details-image" />
                                 </div>
-                                <h1 className="product-details-name">
-                                    {product?.name}
-                                </h1>
-                                {product?.price && <ProductPrice price={product?.price} />}
+
+                                <div className="Product-info-fields">
+                                    <h1 className="product-details-name">
+                                        {product?.name}
+                                    </h1>
+                                    {product?.price && <ProductPrice price={product?.price} />}
+                                </div>
                             </>}
-                    </div>
-                    <div className="col-6 product-details-card">
+                    
+                    <div className=" product-details-card">
                         {isLoading ? <ProductInfoLoader/> :
                             <>
                                 <h1 className="product-description-title"> Descrição do produto</h1>

@@ -69,8 +69,8 @@ const Form = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <BaseForm title={isEditing ? 'ATUALIZAR UM PRODUTO' : 'CADASTRAR UM PRODUTO'}>
-                <div className="row">
-                    <div className="col-6">
+                <div className="product-form-containear">
+                    <div className="">
                         <div className="margin-botton-30">
                             <input
                                 ref={register({
@@ -134,7 +134,7 @@ const Form = () => {
 
 
                     </div>
-                    <div className="col-6">
+                    <div className="">
                         <textarea
                             ref={register({ required: "Campo obrigatório." })}
                             name="description"
