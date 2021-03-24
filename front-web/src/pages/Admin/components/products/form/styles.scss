@@ -1,5 +1,5 @@
 .categories-select__control {
-    height: 50px;
+    height: auto;
     border-radius: 10px !important;
     border: 1px solid #E1E1E1;
 }
@@ -16,6 +16,14 @@
 .product-form-containear{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.product-form-inputs{
+    width: 100%;
+}
+.product-form-text{
+    width: 100%;
+    margin-left: 20px;
 }
 
 @media(max-width: 576px){
@@ -27,5 +35,9 @@
     }
     input{
         width: 250px;
+    }
+    .product-form-text{
+        margin-left: 0;
+        margin-top: 25px;
     }
 }
