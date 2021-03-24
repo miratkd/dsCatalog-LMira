@@ -42,26 +42,28 @@ const ProductsFilter = ({name, handleChangeName, category, handleChangeCategory,
                 />
                 <SearchIcon />
             </div>
-            <Select
-                name="categories"
-                key={`select-${category?.id}`}
-                value={category}
-                isLoading={isLoadingCategories}
-                className="filter-select-conteiner"
-                classNamePrefix="products-categories-select"
-                options={categories}
-                getOptionLabel={(option: Category) => option.name}
-                getOptionValue={(option: Category) => String(option.id)}
-                placeholder={"categorias"}
-                onChange={value => handleChangeCategory(value as Category)}
-                isClearable
-            />
-            <button 
-            className="btn btn-outline-secondary border-radius-10"
-            onClick={clearFilter}
-            >
-                <strong>Limpar filtro</strong>
-            </button>
+            <div className="product-filter-row">
+                <Select
+                    name="categories"
+                    key={`select-${category?.id}`}
+                    value={category}
+                    isLoading={isLoadingCategories}
+                    className="filter-select-conteiner"
+                    classNamePrefix="products-categories-select"
+                    options={categories}
+                    getOptionLabel={(option: Category) => option.name}
+                    getOptionValue={(option: Category) => String(option.id)}
+                    placeholder={"categorias"}
+                    onChange={value => handleChangeCategory(value as Category)}
+                    isClearable
+                />
+                <button 
+                className="btn btn-outline-secondary border-radius-10 product-filter-button"
+                onClick={clearFilter}
+                >
+                    <strong>Limpar filtro</strong>
+                </button>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,21 @@
+.admin-list-uper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.admin-list-filter-button{
+    margin-right: 15px;
+}
+
+@media(max-width: 768px){
+
+}
+@media(max-width: 576px){
+    .admin-list-uper{
+        flex-direction: column;
+    }
+    .admin-list-filter-button{
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}

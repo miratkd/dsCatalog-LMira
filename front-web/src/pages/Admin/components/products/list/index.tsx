@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import Card from '../card';
 import CardLoader from '../../Loader/ProductCardLoader';
 import ProductsFilter from 'core/components/ProductsFilters';
+import './styless.scss';
 
 
 const List = () => {
@@ -73,8 +74,8 @@ const List = () => {
 
     return(
         <div className="admin-products-list">
-            <div className="d-flex justify-content-between">
-                <button className="btn btn-primary btn-lg mr-3" onClick={handleCreate}>
+            <div className="admin-list-uper">
+                <button className="btn btn-primary btn-lg admin-list-filter-button" onClick={handleCreate}>
                     ADICIONAR
                 </button>
                 
