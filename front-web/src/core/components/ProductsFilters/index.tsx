@@ -56,6 +56,7 @@ const ProductsFilter = ({name, handleChangeName, category, handleChangeCategory,
                     placeholder={"categorias"}
                     onChange={value => handleChangeCategory(value as Category)}
                     isClearable
+                    isSearchable={false}
                 />
                 <button 
                 className="btn btn-outline-secondary border-radius-10 product-filter-button"

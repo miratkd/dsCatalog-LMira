@@ -5,6 +5,11 @@
     display: flex;
     justify-content: space-between;
 }
+.product-filter-row{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
 .input-search{
     display: flex;
     align-items: center;
@@ -42,8 +47,17 @@
 }
 
 @media(max-width: 768px){
+    .product-filter-row{
+        margin-top: 10px;
+    }
     .products-filter-container{
         width: 100%;
+        flex-direction: column;
+    }
+    .filter-select-conteiner{
+        margin-right: 20px;
+        margin-left: 0;
+        
     }
 }
 @media(max-width: 576px){

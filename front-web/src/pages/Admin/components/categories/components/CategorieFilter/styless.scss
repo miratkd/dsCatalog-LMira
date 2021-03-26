@@ -1,0 +1,52 @@
+.categorie-filter-containear{
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.categorie-filter-input-name{
+    display: flex;
+    flex: 1;
+    border-bottom: 1px solid #E1E1E1;
+    align-items: center;
+    input{
+        border: none;
+        &::placeholder{
+            color: #9E9E9E;
+        }
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    
+}
+.categorie-filter-orderby{
+    margin-left: 20px;
+    display: flex;
+    flex: 1;
+}
+.react-select-container{
+    width: 100%;
+
+    .react-select__control{
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #E1E1E1;
+    }
+    .react-select__indicator-separator{
+        display: none;
+    }
+    .react-select__placeholder{
+        color: #9E9E9E;
+    }
+}
+.categorie-filter-button{
+    margin-left: 15px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #E1E1E1;
+    width: 125px;
+    color: #9E9E9E;
+    font-weight: bold;
+}
