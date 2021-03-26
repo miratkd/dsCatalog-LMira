@@ -1,0 +1,11 @@
+.categories-form-containear{
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+.categories-form-input{
+    margin-top: 40px;
+    
+    &focus{
+        box-shadow: none;
+    }
+}

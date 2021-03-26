@@ -3,11 +3,11 @@ import {Category} from  'core/types/Product';
 import './styless.scss';
 
 type Props = {
-    categorie?: Category;
-
+    categorie: Category;
+    onRemove: (id: number) => void;
 }
 
-const Card = ({categorie}: Props) => {
+const Card = ({categorie, onRemove}: Props) => {
     return(
         <div className="card-base categorie-card-containear">
             <div className="categorie-card-title">
@@ -23,7 +23,7 @@ const Card = ({categorie}: Props) => {
                     <button 
                         type="button" 
                         className="btn btn-outline-danger border-radius-10 btn-product"
-                        //onClick={() => onRemove(product.id)}
+                        onClick={() => onRemove(categorie.id)}
                     >
                         EXCLUIR
                     </button>
