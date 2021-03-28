@@ -1,0 +1,33 @@
+.user-card-containear{
+    margin-top: 43px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.user-card-text{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+.user-card-title{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.015em;
+
+}
+.user-card-email{
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    margin-top: 5px;
+    color: #9E9E9E;
+}
+.buttons-users-containear{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+}

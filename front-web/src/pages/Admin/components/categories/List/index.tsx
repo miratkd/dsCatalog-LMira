@@ -6,12 +6,14 @@ import Card from "../components/Card";
 import Pagination from "core/components/Pagination";
 import history from "core/utils/history";
 import { toast } from "react-toastify";
+import CardLoader from "../../Loader/ProductCardLoader";
 
 const List = () => {
     const [activePage, setActivePage] = useState(0);
     const [productsResponse, setProductsResponse] = useState<CategoriesResponse>();
     const [name, setName] = useState('');
     const [orderByDirection, setOrderByDirection] = useState('ASC');
+    const [isLoading, setIsLoading] = useState(false);
 
     const getCategories = useCallback(() => {
         const params = {
@@ -20,8 +22,10 @@ const List = () => {
             orderBy: 'id',
             direction: orderByDirection,
         }
+        setIsLoading(true);
         makeRequest({url: '/categories', params})
         .then(response => setProductsResponse(response.data))
+        .finally(() => {setIsLoading(false)})
         
 
     },[activePage, orderByDirection]
@@ -72,7 +76,7 @@ const List = () => {
                     />
             </div>
             <div>
-                {productsResponse?.content.map(category => 
+                {isLoading ? <CardLoader/> : productsResponse?.content.map(category => 
                     (
                         <Card categorie={category} onRemove={remove}/>
                     )
