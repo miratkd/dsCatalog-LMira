@@ -54,10 +54,10 @@ const List = () => {
         if(confirm){
             makePrivateRequest({url: `/categories/${id}`, method: 'DELETE' })
             .then(() => {
-                toast.info('Produto excluido com sucesso!');
+                toast.info('Categoria excluida com sucesso!');
                 getCategories();
             }).catch(() => {
-                toast.error('Erro ao excluir produto!');
+                toast.error('Erro ao excluir categoria!');
             })
         }
     }

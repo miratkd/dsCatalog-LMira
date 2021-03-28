@@ -4,9 +4,10 @@ import './styless.scss';
 
 type Props = {
     user: User;
+    onRemove: (id: number) => void;
 }
 
-const Card = ({user}:Props) => {
+const Card = ({user, onRemove}:Props) => {
     return(
         <div className="card-base user-card-containear">
             <div className="user-card-text">
@@ -27,7 +28,7 @@ const Card = ({user}:Props) => {
                     <button 
                         type="button" 
                         className="btn btn-outline-danger border-radius-10 btn-product"
-                        //onClick={() => onRemove(categorie.id)}
+                        onClick={() => onRemove(user.id)}
                     >
                         EXCLUIR
                     </button>
