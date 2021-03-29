@@ -32,7 +32,7 @@ const Form = () => {
     const [isLoadingCategories, setIsLoadingCategories] = useState(false);
     useEffect(() => {
         if (isEditing) {
-            makeRequest({ url: `/products/${productsId}` })
+            makePrivateRequest({ url: `/products/${productsId}` })
                 .then(response => {
                     setValue('name', response.data.name);
                     setValue('price', response.data.price);

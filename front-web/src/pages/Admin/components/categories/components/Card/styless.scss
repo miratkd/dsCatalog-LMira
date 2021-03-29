@@ -21,6 +21,16 @@
     justify-content: space-between;
 
 }
-.btn-product{
+.btn-categorie{
     width: 45%;
+}
+@media(max-width: 576px){
+    .buttons-categories-containear{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-categorie{
+        width: 100%;
+        margin-top: 10px;
+    }
 }

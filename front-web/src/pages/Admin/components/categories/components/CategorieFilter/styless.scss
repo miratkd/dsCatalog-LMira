@@ -50,3 +50,12 @@
     color: #9E9E9E;
     font-weight: bold;
 }
+@media(max-width: 576px){
+    .categorie-filter-containear{
+        display: flex;
+        flex-direction: column;
+    }
+    .categorie-filter-orderby{
+        margin: 5px 0 15px 0px;
+    }
+}

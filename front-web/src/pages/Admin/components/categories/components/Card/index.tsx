@@ -16,13 +16,13 @@ const Card = ({categorie, onRemove}: Props) => {
             <div className="buttons-categories-containear">
                     <Link to={`/admin/categories/${categorie?.id}`}
                         type="button" 
-                        className="btn btn-outline-secondary border-radius-10 btn-product"
+                        className="btn btn-outline-secondary border-radius-10 btn-categorie"
                     >
                         EDITAR
                     </Link>
                     <button 
                         type="button" 
-                        className="btn btn-outline-danger border-radius-10 btn-product"
+                        className="btn btn-outline-danger border-radius-10 btn-categorie"
                         onClick={() => onRemove(categorie.id)}
                     >
                         EXCLUIR

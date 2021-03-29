@@ -3,7 +3,7 @@ import history from 'core/utils/history';
 import { makePrivateRequest} from 'core/utils/request';
 import BaseForm from 'pages/Admin/components/baseForm';
 import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useParams } from 'react-router';
 import Select from 'react-select';
 import { toast } from 'react-toastify';
@@ -20,13 +20,13 @@ type ParamsType = {
     usersId: string;
 }
 
-const roles = [
-    {value: 'id: 1', label: 'OPERATOR'},
-    {value: 'id: 2', label: 'ADMIN'}
+const options = [
+    {id: '1', label: 'OPERATOR'},
+    {id: '2', label: 'ADMIN'}
 ]
 
 const Form = () => {
-    const { register, handleSubmit, errors, setValue } = useForm<formState>();
+    const { register, handleSubmit, errors, setValue, control} = useForm<formState>();
     const { usersId } = useParams<ParamsType>();
     const isEditing = usersId !== 'create';
 
@@ -42,17 +42,16 @@ const Form = () => {
                 toast.error('Erro ao salvar Usuário!');
             })
         }
-        useEffect(() => {
-            if (isEditing) {
-                makePrivateRequest({ url: `/users/${usersId}` })
-                    .then(response => {
-                        setValue('firstName', response.data.firstName);
-                        setValue('lastName', response.data.lastName);
-                        setValue('email', response.data.email);
-                        setValue('roles', response.data.roles)
-                    });
-            }
-        }, [usersId, isEditing, setValue])   
+    useEffect(() => {
+        if (isEditing) {
+            makePrivateRequest({ url: `/users/${usersId}` })
+                .then(response => {
+                    setValue('firstName', response.data.firstName);
+                    setValue('lastName', response.data.lastName);
+                    setValue('email', response.data.email);
+                });
+        }
+    }, [usersId, isEditing, setValue])   
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -126,10 +125,14 @@ const Form = () => {
                         )}
                     </div>
                     <div className="user-forms-password">
-                        <Select 
+                        <Controller
+                        as={Select}
+                        control={control}
+                        rules={{required: "Campo obrigatorio"}} 
                         name="roles"
-                        options={roles}
+                        options={options}
                         isMulti
+                        getva
                         />
                     </div>
                 </div>

@@ -53,7 +53,7 @@ const Navbar = () => {
                             <li>
                                 {
                                     currentUser && (
-                                        <a href="#logout" className="nav-link active d-inline" onClick={() => setDrawerActive(false)}>
+                                        <a href="#logout" className="nav-link active d-inline" onClick={(e) => {setDrawerActive(false); handleLogout(e);}}>
                                             {
                                                 `LOGOUT - ${currentUser}`
                                             }
@@ -67,13 +67,13 @@ const Navbar = () => {
                         drawerActive && (
                             <>
                                 {
-                                    !currentUser &&(
+                                    !currentUser && (
                                         <li>
                                             <Link to="/auth/login" className="nav-link active"
-                                             onClick={(e) => {
-                                            setDrawerActive(false);
-                                            handleLogout(e);
-                            }}>
+                                                onClick={(e) => {
+                                                    setDrawerActive(false);
+                                                    handleLogout(e);
+                                                }}>
                                                 LOGIN
                                             </Link>
                                         </li>

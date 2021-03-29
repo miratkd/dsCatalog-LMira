@@ -8,7 +8,7 @@
 .user-card-text{
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 54%;
 }
 .user-card-title{
     font-weight: bold;
@@ -30,4 +30,18 @@
     justify-content: space-around;
     flex: 1;
     align-items: center;
+}
+.btn-users{
+    width: 45%;
+}
+@media(max-width: 576px){
+    .buttons-users-containear{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-users{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .user-card-title{margin-top: 20px;}
 }

@@ -21,13 +21,13 @@ const Card = ({user, onRemove}:Props) => {
             <div className="buttons-users-containear">
                     <Link to={`/admin/users/${user?.id}`}
                         type="button" 
-                        className="btn btn-outline-secondary border-radius-10 btn-product"
+                        className="btn btn-outline-secondary border-radius-10 btn-users"
                     >
                         EDITAR
                     </Link>
                     <button 
                         type="button" 
-                        className="btn btn-outline-danger border-radius-10 btn-product"
+                        className="btn btn-outline-danger border-radius-10 btn-users"
                         onClick={() => onRemove(user.id)}
                     >
                         EXCLUIR
