@@ -17,7 +17,7 @@ const PriceField = ({control}: Props) => (
                 placeholder="Preço"
                 className="form-control input-base"
                 value={value}
-                intlConfig={{ locale: 'pt-BR', currency: 'BRL' }}
+                intlConfig={{ locale: 'en-US', currency: 'USD' }}
                 onValueChange={onChange}
             />
         )}

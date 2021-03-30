@@ -15,7 +15,7 @@ export type formState = {
 }
 
 const Form = () => {
-    const { register, handleSubmit, errors, setValue, control } = useForm<formState>();
+    const { register, handleSubmit, errors, setValue } = useForm<formState>();
     const { productsId } = useParams<ParamsType>();
     const isEditing = productsId !== 'create';
     const onSubmit = (data: formState) => {

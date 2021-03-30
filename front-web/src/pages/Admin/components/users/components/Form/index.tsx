@@ -21,8 +21,8 @@ type ParamsType = {
 }
 
 const options = [
-    {id: '1', label: 'OPERATOR'},
-    {id: '2', label: 'ADMIN'}
+    {value: '1', label: 'OPERATOR', id: '1'},
+    {value: '2', label: 'ADMIN', id: '2'}
 ]
 
 const Form = () => {
@@ -132,7 +132,6 @@ const Form = () => {
                         name="roles"
                         options={options}
                         isMulti
-                        getva
                         />
                     </div>
                 </div>
