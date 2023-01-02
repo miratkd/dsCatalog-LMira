@@ -74,23 +74,6 @@ There are two types of system operators; the "operators", those who can add and 
  * JUnit test
  * PostMan
  
- # Test the website yourself!
- 
- ### Link for the website: <https://dscatalog-lmira.netlify.app/>
- Due to the free hosting service the site uses, it may take a while to load the first time.**
- #### Use these users to edit the products!
- 
-   
-  Email: maria@gmail.com
-  
-  Password: 13972684
-  
-  Email: alex@gmail.com
-  
-  Password: 13972684
- 
- Ps: for security reasons, the option to change password has been disabled 
- 
  # Author
   Lucas Mira de Carvalho
   
@@ -182,22 +165,10 @@ Sendo talvez a parte mais importante do projeto, a página de catálogo apresent
  * Testes JUnit
  * PostMan
  
- # Teste o site você mesmo!
+ *** Aviso!
  
-  ### Link para o site: <https://dscatalog-lmira.netlify.app/>
-  Devido ao serviço de hospedagem gratuito que o site utiliza, o mesmo pode demorar um pouco para carregar da primeira vez.**
-  
-  #### utilize esse usuários para editar os produtos!
-  
-  Email: maria@gmail.com
-  
-  Senha: 13972684
-  
-  Email: alex@gmail.com
-  
-  Senha: 13972684
-  
-  Ps: por uma questão de segurança, a opção de alterar senha foi desativada
+ Esse projeto foi publicado originalmente na plataforma Heroku, porem devido as mudanças nas politicas de preços da plataforma, o projeto precisou ser tirado do ar.
+ 
  
   # Author
   Lucas Mira de Carvalho
